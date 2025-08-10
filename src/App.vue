@@ -107,7 +107,7 @@ const opuPackGoal = computed(() => {
         </div>
       </div>
       
-      <div class="version">v1.0.0</div>
+      <div class="version">v1.0.1</div>
     </div>
   </div>
 </template>
