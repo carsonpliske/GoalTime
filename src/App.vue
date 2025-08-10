@@ -107,7 +107,7 @@ const opuPackGoal = computed(() => {
         </div>
       </div>
       
-      <div class="version">v1.0.2</div>
+      <div class="version">v1.0.3</div>
     </div>
   </div>
 </template>
@@ -115,6 +115,7 @@ const opuPackGoal = computed(() => {
 <style scoped>
 .app {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   width: 100vw;
   background-color: white;
   margin: 0;
@@ -123,6 +124,8 @@ const opuPackGoal = computed(() => {
   position: fixed;
   top: 0;
   left: 0;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .content-container {
@@ -131,6 +134,7 @@ const opuPackGoal = computed(() => {
   align-items: center;
   width: 100%;
   padding: 0 20px;
+  min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 }
 
 .logo-container {
