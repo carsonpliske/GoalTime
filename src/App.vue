@@ -37,7 +37,7 @@ const opuPackGoal = computed(() => {
   <div class="app">
     <div class="content-container">
       <div class="logo-container">
-        <div class="target-logo"></div>
+        <img src="/Target.jpg" alt="Target Logo" class="target-logo" />
       </div>
       
       <div class="calculators">
@@ -47,6 +47,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="opuHours" 
               type="number" 
+              inputmode="numeric"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -60,6 +61,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="shipHours" 
               type="number" 
+              inputmode="numeric"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -73,6 +75,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="shipOpuHours" 
               type="number" 
+              inputmode="numeric"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -86,6 +89,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="shipPackHours" 
               type="number" 
+              inputmode="numeric"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -99,6 +103,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="opuPackHours" 
               type="number" 
+              inputmode="numeric"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -120,10 +125,6 @@ const opuPackGoal = computed(() => {
   background-color: white;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
 }
@@ -132,6 +133,7 @@ const opuPackGoal = computed(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 0 20px;
   min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
@@ -141,46 +143,23 @@ const opuPackGoal = computed(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .target-logo {
-  width: 120px;
-  height: 120px;
-  background-color: #cc0000;
-  border-radius: 50%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.target-logo::before {
-  content: '';
-  width: 72px;
-  height: 72px;
-  background-color: white;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.target-logo::after {
-  content: '';
-  width: 24px;
-  height: 24px;
-  background-color: #cc0000;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 
 .calculators {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
+  flex: 1;
 }
 
 .calculator {
