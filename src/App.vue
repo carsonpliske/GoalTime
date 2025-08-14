@@ -47,7 +47,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="opuHours" 
               type="number" 
-              inputmode="numeric"
+              inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -61,7 +61,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="shipHours" 
               type="number" 
-              inputmode="numeric"
+              inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -75,7 +75,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="shipOpuHours" 
               type="number" 
-              inputmode="numeric"
+              inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -89,7 +89,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="shipPackHours" 
               type="number" 
-              inputmode="numeric"
+              inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -103,7 +103,7 @@ const opuPackGoal = computed(() => {
             <input 
               v-model.number="opuPackHours" 
               type="number" 
-              inputmode="numeric"
+              inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
             />
@@ -112,7 +112,7 @@ const opuPackGoal = computed(() => {
         </div>
       </div>
       
-      <div class="version">v1.0.3</div>
+      <div class="version">v1.0.4</div>
     </div>
   </div>
 </template>
