@@ -31,6 +31,26 @@ const opuPackGoal = computed(() => {
   if (opuPackHours.value === null || opuPackHours.value === 0) return ''
   return opuPackHours.value * 50
 })
+
+const clearField = (field: 'opu' | 'ship' | 'shipOpu' | 'shipPack' | 'opuPack') => {
+  switch (field) {
+    case 'opu':
+      opuHours.value = null
+      break
+    case 'ship':
+      shipHours.value = null
+      break
+    case 'shipOpu':
+      shipOpuHours.value = null
+      break
+    case 'shipPack':
+      shipPackHours.value = null
+      break
+    case 'opuPack':
+      opuPackHours.value = null
+      break
+  }
+}
 </script>
 
 <template>
@@ -44,12 +64,13 @@ const opuPackGoal = computed(() => {
         <div class="calculator">
           <label class="calculator-label">OPU UNIT GOAL</label>
           <div class="input-container">
-            <input 
-              v-model.number="opuHours" 
-              type="number" 
+            <input
+              v-model.number="opuHours"
+              type="number"
               inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
+              @blur="clearField('opu')"
             />
             <div class="result">{{ opuUnitGoal }}</div>
           </div>
@@ -58,12 +79,13 @@ const opuPackGoal = computed(() => {
         <div class="calculator">
           <label class="calculator-label">SHIP UNIT GOAL</label>
           <div class="input-container">
-            <input 
-              v-model.number="shipHours" 
-              type="number" 
+            <input
+              v-model.number="shipHours"
+              type="number"
               inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
+              @blur="clearField('ship')"
             />
             <div class="result">{{ shipUnitGoal }}</div>
           </div>
@@ -72,12 +94,13 @@ const opuPackGoal = computed(() => {
         <div class="calculator">
           <label class="calculator-label">SHIP & OPU GOAL</label>
           <div class="input-container">
-            <input 
-              v-model.number="shipOpuHours" 
-              type="number" 
+            <input
+              v-model.number="shipOpuHours"
+              type="number"
               inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
+              @blur="clearField('shipOpu')"
             />
             <div class="result">{{ shipOpuGoal }}</div>
           </div>
@@ -86,12 +109,13 @@ const opuPackGoal = computed(() => {
         <div class="calculator">
           <label class="calculator-label">SHIP & PACK GOAL</label>
           <div class="input-container">
-            <input 
-              v-model.number="shipPackHours" 
-              type="number" 
+            <input
+              v-model.number="shipPackHours"
+              type="number"
               inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
+              @blur="clearField('shipPack')"
             />
             <div class="result">{{ shipPackGoal }}</div>
           </div>
@@ -100,19 +124,20 @@ const opuPackGoal = computed(() => {
         <div class="calculator">
           <label class="calculator-label">OPU & PACK GOAL</label>
           <div class="input-container">
-            <input 
-              v-model.number="opuPackHours" 
-              type="number" 
+            <input
+              v-model.number="opuPackHours"
+              type="number"
               inputmode="decimal"
               placeholder="Hours"
               class="calculator-input"
+              @blur="clearField('opuPack')"
             />
             <div class="result">{{ opuPackGoal }}</div>
           </div>
         </div>
       </div>
       
-      <div class="version">v1.0.4</div>
+      <div class="version">v1.0.5</div>
     </div>
   </div>
 </template>
