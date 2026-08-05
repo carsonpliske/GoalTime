@@ -63,7 +63,7 @@ const hoursList = computed(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   padding: 0 20px;
   min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
@@ -86,8 +86,6 @@ const hoursList = computed(() => {
 .table-wrapper {
   width: 100%;
   max-width: 500px;
-  flex: 1;
-  overflow-y: auto;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
